@@ -1,0 +1,67 @@
+
+
+.navbar{
+    font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 99px;
+    box-shadow: rgba(168, 168, 181, 0.6) -1px 1px 0px 0px inset, rgb(46, 46, 48) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.21) 0px 0.722625px 0.5781px -0.416667px, rgba(0, 0, 0, 0.27) 0px 2.74624px 2.19699px -0.833333px, rgba(0, 0, 0, 0.56) 0px 12px 9.6px -1.25px;
+    opacity: 1;
+    color:white;
+    margin: 40px 30px;
+    padding:13px 40px;
+    display:flex ;
+    justify-content: space-between;
+    align-items: center;
+    border:0.5px solid white;
+    border-radius: 40px;
+}
+
+.navTitle{
+    font-size: 25px;
+    font-weight: 600;
+    color:white;
+}
+
+.navList ul{
+    display: flex;
+    gap:30px;
+    list-style: none;
+}
+
+.navList ul li a{
+    text-decoration: none;
+    color:white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.contact{
+    width:150px;
+    background-color: rgb(25, 20, 20);
+    padding:10px 20px;
+    border-radius: 30px;
+    color:white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:0.5px solid white;
+    gap:10px;
+}
+
+.contactBtn{
+    font-size: 16px;
+    font-weight: 500;
+    background-color: black;
+    color: white;
+    border:0px solid black;
+}
+
+.contact-icon{
+    height:20px;
+    width:20px;
+    filter:invert(1);
+    font-weight: bold;
+}
