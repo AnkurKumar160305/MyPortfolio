@@ -1,26 +1,36 @@
-import React from 'react'   
-import './Navbar.css' 
+import React from 'react';
+import './Navbar.css';
 
 const Navbar = () => {
   return (
-    <div class='navbar'>
-        <p className='navTitle'>Ankur</p>
-        <div className='navList'>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
-        </div>
-        <div className='navButtton'>
-            <a href="#contact" className='contact'>
-                <button className='contactBtn'>Contact</button>
-                <img className='contact-icon' src="./src/assets/add-user.png" alt="" />
-            </a>
-        </div>
-    </div>
-  )
-}
+    <div className='navbar'>
+      {/* Navbar Title */}
+      <p className='navTitle'>Ankur</p>
 
-export default Navbar
+      {/* Navigation Links */}
+      <div className='navList'>
+        <ul className='navLinks'>
+          <li className='navItem home'><a href="#home" className='navLink'>HOME</a></li>
+          <li className='navItem about'><a href="#about" className='navLink'>ABOUT</a></li>
+          <li className='navItem skills'><a href="#skills" className='navLink'>SKILLS</a></li>
+          <li className='navItem projects'><a href="#projects" className='navLink'>PROJECTS</a></li>
+        </ul>
+      </div>
+
+      {/* Social Icons */}
+      <div className='socialIcons'>
+        <a href="https://github.com/AnkurKumar160305" target="_blank" rel="noopener noreferrer">
+          <img className='socialIcon' src="./src/assets/social (1).png" alt="GitHub"/>
+        </a>
+        <a href="https://www.linkedin.com/in/ankur-kumar-833026284/" target="_blank" rel="noopener noreferrer">
+          <img className='socialIcon' src="./src/assets/social (2).png" alt="LinkedIn"/>
+        </a>
+        <a href="https://leetcode.com/u/qDCkfvJavE/" target="_blank" rel="noopener noreferrer">
+          <img className='socialIcon' src="./src/assets/leetcode.svg" alt="LeetCode"/>
+        </a>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;

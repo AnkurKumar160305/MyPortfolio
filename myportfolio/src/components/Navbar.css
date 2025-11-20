@@ -1,67 +1,137 @@
+/* IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
-
-.navbar{
-    font-family: "Inter Display", "Inter Display Placeholder", sans-serif;
-    backdrop-filter: blur(10px);
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 99px;
-    box-shadow: rgba(168, 168, 181, 0.6) -1px 1px 0px 0px inset, rgb(46, 46, 48) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.21) 0px 0.722625px 0.5781px -0.416667px, rgba(0, 0, 0, 0.27) 0px 2.74624px 2.19699px -0.833333px, rgba(0, 0, 0, 0.56) 0px 12px 9.6px -1.25px;
-    opacity: 1;
-    color:white;
-    margin: 40px 30px;
-    padding:13px 40px;
-    display:flex ;
+/* NAVBAR CONTAINER */
+.navbar {
+    font-family: 'Rajdhani', sans-serif;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    border:0.5px solid white;
-    border-radius: 40px;
+    padding: 15px 50px;
+    margin: 30px 20px;
+    border-radius: 50px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.1);
+    z-index: 3;
 }
 
-.navTitle{
-    font-size: 25px;
-    font-weight: 600;
-    color:white;
+/* NAVBAR TITLE */
+.navTitle {
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #ff7ae5, #a36bff, #4da6ff);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
-.navList ul{
+/* NAV LINKS */
+.navLinks {
     display: flex;
-    gap:30px;
+    gap: 50px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.navList ul li a{
-    text-decoration: none;
-    color:white;
-    font-size: 20px;
-    font-weight: 500;
+.navItem {
+    position: relative;
 }
 
-
-.contact{
-    width:150px;
-    background-color: rgb(25, 20, 20);
-    padding:10px 20px;
-    border-radius: 30px;
-    color:white;
+.navLink {
     text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects for individual items */
+.home:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,#ff7ae5,#ffb347);
+    border-radius: 2px;
+}
+
+.about:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,#36d1dc,#5b86e5);
+    border-radius: 2px;
+}
+
+.skills:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,#ff6a00,#ee0979);
+    border-radius: 2px;
+}
+
+.projects:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,#43cea2,#185a9d);
+    border-radius: 2px;
+}
+
+/* Change text color on hover individually */
+.home:hover .navLink { color: #ffb347; }
+.about:hover .navLink { color: #5b86e5; }
+.skills:hover .navLink { color: #ee0979; }
+.projects:hover .navLink { color: #43cea2; }
+
+/* SOCIAL ICONS */
+.socialIcons {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border:0.5px solid white;
-    gap:10px;
+    gap: 20px;
 }
 
-.contactBtn{
-    font-size: 16px;
-    font-weight: 500;
-    background-color: black;
-    color: white;
-    border:0px solid black;
+.socialIcon {
+    width: 23px;
+    height: 23px;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: invert(1);
 }
 
-.contact-icon{
-    height:20px;
-    width:20px;
-    filter:invert(1);
-    font-weight: bold;
+.socialIcon:hover {
+    transform: scale(1.2);
+    filter: invert(0.7) drop-shadow(0 0 5px #fff);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 30px;
+    }
+    .navLinks {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+    .socialIcons {
+        justify-content: center;
+        gap: 15px;
+    }
 }
