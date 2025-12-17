@@ -3,18 +3,35 @@ import Navbar from './components/Navbar.jsx'
 import Main from './components/Main.jsx'
 import Navmenu from './components/Navmenu.jsx'
 import About from './components/About.jsx'
+import Antigravity from './components/Antigravity.jsx'
+
 function App() {
 
   return (
     <>
       <div className="app">
-          <img src="./src/assets/bg1.jpg"  className="logo react" alt="React logo" />
-          <Navbar className="Nav" />
-          <Main className="Main" />
-          <About className="About" />
+        <div className="antigravity">
+          <Antigravity
+            count={300}
+            magnetRadius={6}
+            ringRadius={7}
+            waveSpeed={0.4}
+            waveAmplitude={1}
+            particleSize={1.5}
+            lerpSpeed={0.05}
+            color={'#FF9FFC'}
+            autoAnimate={true}
+            particleVariance={1}
+          />
+        </div>
 
-          {/* <Navmenu></Navmenu> */}
-      </div>
+        
+
+        <Navbar />
+        <Main />
+        <About />
+    </div>
+
     </>
   )
 }

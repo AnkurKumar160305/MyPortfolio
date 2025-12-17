@@ -29,25 +29,25 @@ const About = () => {
           {/* BOX GRID */}
           <div className="left-box grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 mt-6">
             <div className="box1 p-6 border border-gray-700 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 text-center">
-              <img src="" alt="" className="mx-auto mb-4" />
+              {/* <img src="" alt="" className="mx-auto mb-4" /> */}
               <h2 className="box1-title text-xl font-semibold text-red-500 mb-2">Frontend</h2>
               <p className="box1-text text-gray-400 text-sm">Building responsive, interactive UIs with modern frameworks</p>
             </div>
 
             <div className="box2 p-6 border border-gray-700 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 text-center">
-              <img src="" alt="" className="mx-auto mb-4" />
+              {/* <img src="" alt="" className="mx-auto mb-4" /> */}
               <h2 className="box2-title text-xl font-semibold text-red-500 mb-2">Backend</h2>
               <p className="box2-text text-gray-400 text-sm">Designing robust APIs and server-side logic</p>
             </div>
 
             <div className="box3 p-6 border border-gray-700 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 text-center">
-              <img src="" alt="" className="mx-auto mb-4" />
+              {/* <img src="" alt="" className="mx-auto mb-4" /> */}
               <h2 className="box3-title text-xl font-semibold text-red-500 mb-2">DevOps</h2>
               <p className="box3-text text-gray-400 text-sm">Automating deployment and cloud infrastructure</p>
             </div>
 
             <div className="box4 p-6 border border-gray-700 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 text-center">
-              <img src="" alt="" className="mx-auto mb-4" />
+              {/* <img src="" alt="" className="mx-auto mb-4" /> */}
               <h2 className="box4-title text-xl font-semibold text-red-500 mb-2">UI/UX</h2>
               <p className="box4-text text-gray-400 text-sm">Crafting seamless and intuitive user experiences</p>
             </div>
