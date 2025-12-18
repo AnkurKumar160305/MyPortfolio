@@ -1,4 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap');
 
-.about-section{
-    margin:0px 140px;
+.about-section {
+  padding: 60px 20px;
+  font-family: 'Rajdhani', sans-serif;
+  color: #ccc;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  color: transparent;
+  background: linear-gradient(90deg, #ff7ae5, #a36bff, #4da6ff);
+  -webkit-background-clip: text;
+  margin-bottom: 60px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* increased gap */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-left {
+  flex: 2;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  transition: color 0.3s ease;
+}
+
+.about-text:hover {
+  color: #ffb347;
+}
+
+.highlight {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Tech box styling */
+.tech-box {
+  background-color: #1a1a1a; /* dark gray */
+  border: 1px solid rgba(255, 122, 229, 0.2);
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.tech-box h3 {
+  color: #ff4d6d; /* neon red/pink */
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.tech-box p {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Hover effect */
+.tech-box:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(255, 77, 109, 0.6);
+  background: linear-gradient(145deg, #1a1a2e, #4b006e, #ff4d6d); 
+  border: 1px solid #ff4d6d;
+}
+
+
+.about-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.skills-title {
+  font-size: 1.8rem;
+  color: #ff7ae5;
+  margin-bottom: 25px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.skills-title:hover {
+  color: #ffb347;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  transition: transform 0.3s;
+}
+
+.skill:hover {
+  transform: scale(1.02);
+}
+
+.skill-name {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.skill-percent {
+  color: #ff6b6b;
+}
+
+.skill-bar {
+  height: 10px;
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #ff7ae5, #4da6ff);
+  border-radius: 8px;
+  transition: width 0.6s ease-in-out;
+}
+
+/* Responsive */
+@media (min-width: 1024px) {
+  .about-content {
+    flex-direction: row;
+    gap: 80px; /* increased left-right gap */
+  }
+}
+
+@media (max-width: 768px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-right {
+    margin-top: 30px;
+  }
 }
