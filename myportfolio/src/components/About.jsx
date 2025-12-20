@@ -25,28 +25,31 @@ const About = () => {
         {/* LEFT SIDE */}
         <div className="about-left">
           <p className="about-text">
-            Hello! I'm <span className="highlight">Ankur</span>, a passionate software developer creating efficient, scalable, and user-friendly solutions.
+            Hi! I'm <span className="highlight">Ankur</span>, a passionate software developer focused on building <span className="highlight">efficient</span> and <span className="highlight">user-friendly</span> applications.  
             <br /><br />
-            I focus on writing clean, maintainable code and enjoy building applications that make a real impact. My philosophy centers on <span className="highlight">performance</span>, <span className="highlight">UX</span>, and <span className="highlight">modern technologies</span>.
+            I specialize in crafting modern interfaces and scalable backend systems with <span className="highlight">clean code</span> and <span className="highlight">high performance</span>.  
+            <br /><br />
+            I enjoy exploring <span className="highlight">emerging technologies</span>, cloud platforms, and AI-driven solutions to create innovative and impactful projects.  
+            <br /><br />
+            I also love improving <span className="highlight">UI/UX design</span>, collaborating with teams, and contributing to open-source communities.
           </p>
 
-          {/* TECH BOX GRID */}
           <div className="tech-grid">
             <div className="tech-box">
               <h3>Frontend</h3>
-              <p>Building interactive, responsive user interfaces</p>
+              <p>Responsive and interactive UI using React, HTML5 & CSS3.</p>
             </div>
             <div className="tech-box">
               <h3>Backend</h3>
-              <p>Designing robust APIs and server-side logic</p>
+              <p>Robust APIs, server-side logic, and database management with Node.js.</p>
             </div>
             <div className="tech-box">
               <h3>DevOps</h3>
-              <p>Automating deployment and cloud infrastructure</p>
+              <p>Deployment automation, CI/CD pipelines, and cloud infrastructure.</p>
             </div>
             <div className="tech-box">
               <h3>UI/UX</h3>
-              <p>Crafting seamless and intuitive user experiences</p>
+              <p>Designing intuitive, modern, and seamless user experiences.</p>
             </div>
           </div>
         </div>
@@ -54,6 +57,7 @@ const About = () => {
         {/* RIGHT SIDE */}
         <div className="about-right">
           <h2 className="skills-title">My Skills</h2>
+          <p className="skills-desc">Continuously improving my skills with modern technologies to deliver high-quality solutions.</p>
           <div className="skills-list">
             {skills.map((skill, idx) => (
               <div key={idx} className="skill">
