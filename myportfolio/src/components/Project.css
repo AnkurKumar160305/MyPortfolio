@@ -1,0 +1,45 @@
+.projects-section {
+  padding: 80px 8%;
+  color: #eaeaea;
+}
+
+.projects-header {
+  padding: 28px 32px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+}
+
+.projects-header h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.projects-header p {
+  opacity: 0.85;
+  font-size: 1rem;
+}
+
+.projects-header span {
+  color: #7df9ff;
+  font-weight: 600;
+}
+
+.projects-grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.projects-gallery {
+  margin-top: 90px;
+  text-align: center;
+}
+
+.projects-gallery h3 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  color: #7df9ff;
+}

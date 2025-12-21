@@ -7,6 +7,8 @@ import { GiCheckMark } from "react-icons/gi";
 import { MdOutlineStar } from "react-icons/md";
 import { AiOutlineFire } from "react-icons/ai";
 
+const LEETCODE_USERNAME = "qDCkfvJavE";
+
 const Competitive = () => {
   const [stats, setStats] = useState({
     leetcode: null,
@@ -46,7 +48,8 @@ const Competitive = () => {
     fetchStats();
   }, []);
 
-  if (stats.loading) return <div className="comp-loading">Loading stats...</div>;
+  if (stats.loading)
+    return <div className="comp-loading">Loading stats...</div>;
   if (stats.error) return <div className="comp-error">{stats.error}</div>;
 
   return (
@@ -60,18 +63,27 @@ const Competitive = () => {
               <SiLeetcode className="comp-icon leetcode-icon" />
               <h3>LeetCode</h3>
             </div>
-            {stats.leetcode?.data?.matchedUser?.submitStats?.acSubmissionNum?.map(
-              (item) => (
-                <p key={item.difficulty}>
-                  {item.difficulty === "Easy" && <GiCheckMark className="stat-icon easy-icon" />}
-                  {item.difficulty === "Medium" && <MdOutlineStar className="stat-icon medium-icon" />}
-                  {item.difficulty === "Hard" && <AiOutlineFire className="stat-icon hard-icon" />}
-                  <strong>{item.difficulty}:</strong> {item.count}
-                </p>
-              )
+
+            {stats.leetcode.submitStats.acSubmissionNum.map(
+              (item) =>
+                item.difficulty !== "All" && (
+                  <p key={item.difficulty}>
+                    {item.difficulty === "Easy" && (
+                      <GiCheckMark className="stat-icon easy-icon" />
+                    )}
+                    {item.difficulty === "Medium" && (
+                      <MdOutlineStar className="stat-icon medium-icon" />
+                    )}
+                    {item.difficulty === "Hard" && (
+                      <AiOutlineFire className="stat-icon hard-icon" />
+                    )}
+                    <strong>{item.difficulty}:</strong> {item.count}
+                  </p>
+                )
             )}
+
             <a
-              href={`https://leetcode.com/${stats.leetcode?.profile?.username || ""}`}
+              href={`https://leetcode.com/${LEETCODE_USERNAME}`}
               target="_blank"
               rel="noopener noreferrer"
               className="visit-link leetcode-btn"
@@ -98,7 +110,8 @@ const Competitive = () => {
             </p>
             <p>
               <AiOutlineFire className="stat-icon hard-icon" />
-              <strong>Max Rating:</strong> {stats.codeforces?.maxRating || "N/A"}
+              <strong>Max Rating:</strong>{" "}
+              {stats.codeforces?.maxRating || "N/A"}
             </p>
             <a
               href={`https://codeforces.com/profile/${stats.codeforces?.handle}`}
@@ -124,7 +137,8 @@ const Competitive = () => {
             </p>
             <p>
               <MdOutlineStar className="stat-icon medium-icon" />
-              <strong>Tracks Completed:</strong> {stats.codingninja?.tracksCompleted}
+              <strong>Tracks Completed:</strong>{" "}
+              {stats.codingninja?.tracksCompleted}
             </p>
             <a
               href="https://www.codingninjas.com/"
