@@ -47,12 +47,6 @@ const Project = () => {
         />
       </div>
 
-      {/* ===== Visual Gallery ===== */}
-      <div className="projects-gallery">
-        <h3>📸 Project Snapshots</h3>
-        <CircularGallery />
-      </div>
-
     </section>
   );
 };

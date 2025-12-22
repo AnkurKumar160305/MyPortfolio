@@ -1,76 +1,70 @@
 import { CometCard } from "./ui/comet-card";
 
-const CometCardDemo=() =>{
+const CometCardDemo = () => {
+  const projects = [
+    {
+      title: "Portfolio Website",
+      description: "Personal portfolio with React, animations, and modern UI.",
+      tech: ["React", "CSS", "Animations"],
+      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+    },
+    {
+      title: "DSA Visualizer",
+      description: "Interactive platform to visualize data structures & algorithms.",
+      tech: ["JavaScript", "Algorithms", "UI"],
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475"
+    },
+    {
+      title: "Competitive Tracker",
+      description: "Tracks Codeforces, LeetCode & Coding Ninjas progress.",
+      tech: ["React", "APIs", "Charts"],
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+    }
+  ];
+
   return (
-    <CometCard>
-      <button
-        type="button"
-        className="
-          my-10 flex w-80 cursor-pointer flex-col items-stretch rounded-[16px] 
-          border-2 border-transparent bg-gradient-to-br from-[#1F2121] to-[#27292a] 
-          p-2 saturate-0 md:my-20 md:p-4 transition-transform duration-300 hover:scale-105
-          relative overflow-hidden
-        "
-        aria-label="View invite F7RA"
-        style={{
-          transformStyle: "preserve-3d",
-        }}
-      >
-        {/* Animated neon border overlay */}
-        <span className="
-          absolute inset-0 rounded-[16px] border-2 border-gradient animate-borderGlow
-          pointer-events-none
-        "></span>
+    <div className="projects-grid flex flex-wrap justify-center gap-6">
+      {projects.map((project, index) => (
+        <CometCard key={index}>
+          <div
+            className="
+              my-6 flex w-72 md:w-80 cursor-pointer flex-col items-stretch
+              rounded-3xl bg-gradient-to-br from-[#1F2121] to-[#27292a]
+              p-4 md:p-5 transition-transform duration-300 hover:scale-105 hover:shadow-2xl
+              hover:shadow-[#7df9ff]/60 relative overflow-hidden
+            "
+            style={{ transformStyle: "preserve-3d" }}
+          >
+            {/* Project Image */}
+            <div className="relative w-full aspect-[4/5] overflow-hidden rounded-3xl z-10">
+              <img
+                loading="lazy"
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover rounded-t-3xl contrast-125 transition-transform duration-500 hover:scale-110"
+              />
+            </div>
 
-        <div className="mx-2 flex-1 relative z-10">
-          <div className="relative mt-2 aspect-[3/4] w-full">
-            <img
-              loading="lazy"
-              className="absolute inset-0 h-full w-full rounded-[16px] object-cover contrast-125"
-              alt="Invite background"
-              src="https://images.unsplash.com/photo-1505506874110-6a7a69069a08?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              style={{ opacity: 1 }}
-            />
+            {/* Content */}
+            <div className="relative z-10 p-4 md:p-5 bg-black/25 rounded-xl backdrop-blur-md flex flex-col gap-3 mt-3">
+              <h3 className="text-lg font-bold text-white">{project.title}</h3>
+              <p className="text-sm text-gray-300 leading-snug">{project.description}</p>
+              <div className="flex flex-wrap gap-2 mt-1">
+                {project.tech.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="px-2 py-1 bg-[#1F2121]/70 text-[#7df9ff] text-xs font-semibold rounded"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div className="mt-2 flex flex-shrink-0 items-center justify-between p-4 font-mono text-white z-10 relative">
-          <div className="text-xs">Comet Invitation</div>
-          <div className="text-xs text-gray-300 opacity-50">#F7RA</div>
-        </div>
-
-        {/* Custom animated border style */}
-        <style jsx>{`
-          .border-gradient {
-            border-image-slice: 1;
-            border-image-source: linear-gradient(
-              270deg,
-              #7df9ff,
-              #ff6af0,
-              #ffd166,
-              #7df9ff
-            );
-          }
-
-          @keyframes borderGlow {
-            0% {
-              border-image-source: linear-gradient(270deg, #7df9ff, #ff6af0, #ffd166, #7df9ff);
-            }
-            50% {
-              border-image-source: linear-gradient(270deg, #ff6af0, #ffd166, #7df9ff, #ff6af0);
-            }
-            100% {
-              border-image-source: linear-gradient(270deg, #7df9ff, #ff6af0, #ffd166, #7df9ff);
-            }
-          }
-
-          .animate-borderGlow {
-            animation: borderGlow 3s linear infinite;
-          }
-        `}</style>
-      </button>
-    </CometCard>
+        </CometCard>
+      ))}
+    </div>
   );
-}
+};
 
 export default CometCardDemo;
