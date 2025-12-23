@@ -9,6 +9,7 @@ import Antigravity from './components/Antigravity.jsx';
 import Competitive from './components/Competitive.jsx';
 import ScrollTracker from './components/ScrollTracker';
 import Project from './components/Project';
+import Projectcard from './components/Projectcard';
 
 function App() {
   return (
@@ -33,7 +34,8 @@ function App() {
       <Main />
       <About />
       <Competitive />
-      <Project/>
+      {/* <Project/> */}
+      <Projectcard/>
     </div>
   );
 }
