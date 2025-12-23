@@ -55,7 +55,6 @@
 }
 
 .about-text:hover {
-  color: #ff7ae5; /* soft accent color */
   transform: translateY(-2px);
 }
 
