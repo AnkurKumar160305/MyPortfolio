@@ -9,7 +9,9 @@ import Antigravity from './components/Antigravity.jsx';
 import Competitive from './components/Competitive.jsx';
 import ScrollTracker from './components/ScrollTracker';
 import Project from './components/Project';
-import Projectcard from './components/Projectcard';
+import Card from './components/Projectcard.jsx';
+import { BrowserRouter } from 'react-router-dom';
+import { Route,Routes } from 'react-router-dom';
 
 function App() {
   return (
@@ -31,11 +33,23 @@ function App() {
       </div>
 
       <Navbar />
-      <Main />
-      <About />
-      <Competitive />
+          
       {/* <Project/> */}
-      <Projectcard/>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Main />
+                <About />
+                <Competitive />
+                <Card/>
+              </>
+          }/>
+          {/* <Route path="/projects" element={<Card />} /> */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

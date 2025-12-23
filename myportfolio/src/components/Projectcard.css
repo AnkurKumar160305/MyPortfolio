@@ -1,0 +1,168 @@
+/* ===== Section ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  padding: 4rem 2rem;
+}
+
+
+/* ===== Card ===== */
+.card {
+  width: 380px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-14px) scale(1.03);
+  box-shadow: 0 35px 90px rgba(255, 0, 204, 0.35);
+}
+
+/* ===== Image ===== */
+.image-wrapper {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.card:hover img {
+  transform: scale(1.15);
+}
+
+/* Overlay */
+.view-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    rgba(0, 0, 0, 0.2)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.image-wrapper:hover .view-overlay {
+  opacity: 1;
+}
+
+/* ===== Content ===== */
+.content {
+  padding: 1.6rem;
+  text-align: center;
+}
+
+/* Title */
+.heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+}
+
+/* Description */
+.text {
+  font-size: 0.95rem;
+  color: #d3d3d3;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
+/* ===== Tech Stack ===== */
+.tech-stack {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.4rem;
+}
+
+.tech-stack span {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+}
+
+/* ===== Buttons ===== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+/* Primary Button */
+.primary-btn {
+  padding: 0.55rem 1.6rem;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #ff00cc, #7f5cff);
+  color: #ffffff;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 18px rgba(255, 0, 204, 0.5);
+}
+
+.primary-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 30px rgba(255, 0, 204, 0.8);
+}
+
+/* ===== Icon Buttons ===== */
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.icon-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* GitHub */
+.github-btn:hover {
+  background: linear-gradient(135deg, #333333, #000000);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+/* LinkedIn */
+.linkedin-btn:hover {
+  background: linear-gradient(135deg, #0a66c2, #004182);
+  box-shadow: 0 0 20px rgba(10, 102, 194, 0.8);
+}
+
+/* Icons */
+.icon {
+  width: 22px;
+  filter: invert(1);
+}
