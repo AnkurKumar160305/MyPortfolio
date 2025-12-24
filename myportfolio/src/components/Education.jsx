@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import TimelineDemo from "./Timeline";
 
 const Education = () => {
   return (
-    <div>
-      
+    <div style={{ minHeight: "100vh" }}>
+      <TimelineDemo />
     </div>
-  )
-}
+  );
+};
 
-export default Education
+export default Education;

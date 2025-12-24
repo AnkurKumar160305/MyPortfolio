@@ -12,6 +12,7 @@ import Project from './components/Project';
 import Card from './components/Projectcard.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import { Route,Routes } from 'react-router-dom';
+import Education from './components/Education';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
                 <About />
                 <Competitive />
                 <Card/>
+                <Education/>
               </>
           }/>
           {/* <Route path="/projects" element={<Card />} /> */}
