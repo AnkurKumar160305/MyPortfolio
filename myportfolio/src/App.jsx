@@ -13,6 +13,8 @@ import Card from './components/Projectcard.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import { Route,Routes } from 'react-router-dom';
 import Education from './components/Education';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -47,6 +49,8 @@ function App() {
                 <Competitive />
                 <Card/>
                 <Education/>
+                <Contact/>
+                <Footer/>
               </>
           }/>
           {/* <Route path="/projects" element={<Card />} /> */}

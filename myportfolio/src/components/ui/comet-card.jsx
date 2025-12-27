@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const CometCard = ({
-  rotateDepth = 17.5,
-  translateDepth = 20,
+  rotateDepth = 15,
+  translateDepth = 15,
   className,
   children
 }) => {
@@ -15,13 +15,14 @@ export const CometCard = ({
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
+  // Added damping and stiffness to ensure movement is smooth but "tight" (prevents jitter blur)
+  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 25 });
+  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 25 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [`-${rotateDepth}deg`, `${rotateDepth}deg`]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [`${rotateDepth}deg`, `-${rotateDepth}deg`]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [`${rotateDepth}deg`, `-${rotateDepth}deg`]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [`-${rotateDepth}deg`, `${rotateDepth}deg`]);
 
-  const translateX = useTransform(mouseXSpring, [-0.5, 0.5], [`-${translateDepth}px`, `${translateDepth}px`]);
+  const translateX = useTransform(mouseXSpring, [-0.5, 0.5], [`${translateDepth}px`, `-${translateDepth}px`]);
   const translateY = useTransform(mouseYSpring, [-0.5, 0.5], [`${translateDepth}px`, `-${translateDepth}px`]);
 
   const handleMouseMove = (e) => {
@@ -40,7 +41,10 @@ export const CometCard = ({
   };
 
   return (
-    <div className={cn("perspective-distant transform-3d", className)}>
+    <div 
+      className={cn("relative", className)} 
+      style={{ perspective: "1200px" }}
+    >
       <motion.div
         ref={ref}
         onMouseMove={handleMouseMove}
@@ -50,16 +54,23 @@ export const CometCard = ({
           rotateY,
           translateX,
           translateY,
+          transformStyle: "preserve-3d",
+          /* CRITICAL FIXES FOR BLUR */
+          backfaceVisibility: "hidden", 
+          WebkitFontSmoothing: "antialiased"
         }}
-        initial={{ scale: 1, z: 0 }}
+        initial={{ scale: 1 }}
         whileHover={{
-          scale: 1.05,
-          z: 50,
-          transition: { duration: 0.2 },
+          scale: 1.02, // Kept subtle to prevent pixel distortion
+          transition: { duration: 0.3, ease: "easeOut" },
         }}
-        className="relative rounded-2xl"
+        // willChange improves performance and prevents the "snap" to blur
+        className="relative rounded-2xl will-change-transform"
       >
-        {children}
+        {/* Transparent wrapper to prevent content overflow from causing jitter */}
+        <div className="relative z-10">
+          {children}
+        </div>
       </motion.div>
     </div>
   );
