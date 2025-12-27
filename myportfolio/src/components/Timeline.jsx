@@ -10,7 +10,8 @@ const timelineData = [
     role: "Frontend Developer",
     company: "Aceternity Pvt. Ltd.",
     description:
-      "Built and maintained UI components, implemented responsive designs, and improved web performance.",
+      "Built and maintained UI components, implemented responsive designs, and improved web performance across multiple high-traffic platforms.",
+    skills: ["React.js", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion", "Redux"],
   },
   {
     year: "2022 - 2024",
@@ -18,20 +19,23 @@ const timelineData = [
     company: "Creative Minds Studio",
     description:
       "Designed web and mobile interfaces, created wireframes, and collaborated with developers to implement interactive UI components.",
+    skills: ["Figma", "Adobe XD", "Sketch", "Prototyping", "User Research", "Design Systems"],
   },
   {
     year: "2018 - 2022",
     role: "Bachelor of Technology (B.Tech)",
     company: "XYZ University",
     description:
-      "Major: Computer Science & Engineering. Achievements: Dean's List, Hackathons, College Projects.",
+      "Major: Computer Science & Engineering. Achievements: Dean's List, Hackathons Winner, College Projects Excellence Award.",
+    skills: ["Data Structures", "Algorithms", "Web Development", "Machine Learning", "DBMS", "Python"],
   },
   {
     year: "2016 - 2018",
     role: "Higher Secondary Education",
     company: "ABC Senior Secondary School",
     description:
-      "Stream: Science. Achievements: Top 5% of Class, Science Olympiad Winner.",
+      "Stream: Science with Computer Science. Achievements: Top 5% of Class, Science Olympiad Gold Medal, Mathematics Excellence.",
+    skills: ["Physics", "Chemistry", "Mathematics", "Computer Science", "Problem Solving"],
   },
 ];
 
@@ -42,14 +46,21 @@ const TimelineDemo = () => {
   const [lineHeight, setLineHeight] = useState(0);
 
   useEffect(() => {
-    if (cardsRef.current) {
-      setLineHeight(cardsRef.current.scrollHeight);
-    }
+    const updateLineHeight = () => {
+      if (cardsRef.current) {
+        setLineHeight(cardsRef.current.scrollHeight);
+      }
+    };
+    
+    updateLineHeight();
+    window.addEventListener('resize', updateLineHeight);
+    
+    return () => window.removeEventListener('resize', updateLineHeight);
   }, []);
 
   const { scrollYProgress } = useScroll({
-    target: cardsRef,
-    offset: ["start 60%", "end 40%"],
+    target: containerRef,
+    offset: ["start start", "end end"],
   });
 
   const progressHeight = useTransform(scrollYProgress, [0, 1], [0, lineHeight]);
@@ -119,6 +130,7 @@ const TimelineDemo = () => {
                       <span className="year-icon">📅</span>
                       {item.year}
                     </div>
+                    
                     <div className="card-header">
                       <h4 className="timeline-role">{item.role}</h4>
                       <p className="timeline-company">
@@ -126,7 +138,36 @@ const TimelineDemo = () => {
                         {item.company}
                       </p>
                     </div>
+                    
                     <p className="timeline-desc">{item.description}</p>
+
+                    {/* Skills Section */}
+                    <div className="skills-section">
+                      <div className="skills-header">
+                        <span className="skills-icon">💡</span>
+                        <span className="skills-title">Key Skills</span>
+                      </div>
+                      <div className="skills-container">
+                        {item.skills.map((skill, skillIndex) => (
+                          <motion.span
+                            key={skillIndex}
+                            className="skill-tag"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ 
+                              delay: skillIndex * 0.08,
+                              duration: 0.4,
+                              ease: "easeOut"
+                            }}
+                            whileHover={{ scale: 1.1, y: -4 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            {skill}
+                          </motion.span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
 
                   {/* Decorative elements */}
