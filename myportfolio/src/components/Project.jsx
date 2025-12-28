@@ -1,7 +1,6 @@
 import React from "react";
 import ElectricBorder from "./ElectricBorder";
 import CometCard from "./CometCard";
-import CircularGallery from "./CircularGallery";
 import "./Project.css";
 
 
