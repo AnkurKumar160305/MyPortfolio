@@ -43,7 +43,7 @@ const Card = () => {
   };
 
   return (
-    <div style={styles.wrapper}>
+    <div style={styles.wrapper} id="contact">
       <div style={styles.mainHeader}>
         <h1 style={styles.mainTitle}>GET IN TOUCH</h1>
         <div style={styles.underline}></div>

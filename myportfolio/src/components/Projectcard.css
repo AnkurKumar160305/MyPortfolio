@@ -106,13 +106,14 @@
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
+  will-change: transform;
 }
 
 .card:hover {
-  transform: translateY(-14px) scale(1.03);
-  box-shadow: 0 35px 90px rgba(125, 249, 255, 0.35);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 35px 90px rgba(125, 151, 255, 0.35);
 }
 
 /* =========================

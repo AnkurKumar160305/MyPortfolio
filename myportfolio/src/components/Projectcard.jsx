@@ -6,7 +6,7 @@ import { projects } from "../data/projects";
 
 const Projectcard = () => {
   return (
-    <section className="cards">
+    <section className="cards" id="projects">
 
       {/* ===== Projects Heading ===== */}
       <div className="projects-heading">

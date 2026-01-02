@@ -14,7 +14,7 @@ const skills = [
 
 const About = () => {
   return (
-    <div className="about-section">
+    <div className="about-section" id="about">
 
       {/* TITLE */}
       <h1 className="about-title">About Me</h1>

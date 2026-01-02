@@ -4,89 +4,93 @@
 @custom-variant dark (&:is(.dark *));
 
 
-/* Reset */
+/* =======================================
+   RESET & BASE
+======================================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
-/* * {
-cursor: url("/mask.svg") 0 0, auto;
-} */
+/* Hide default cursor */
+body {
+  cursor: none;
+  background: black; /* Ensure background is black for Liquid Ether */
+  color: white;
+  font-family: 'Rajdhani', sans-serif;
+}
 
 
-/* .app {
-  position: relative;
-  width: 100%;
-  /* height: 100vh; */
-  /* overflow: hidden;
-} */ 
-
-/* .logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit:cover;
-  z-index: -1;
-  
-} */
-
-/* Full-page Antigravity background */
-.antigravity {
+/* =======================================
+   LIQUID ETHER BACKGROUND
+======================================= */
+.liquid-bg {
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  z-index: -999;          /* below all content */
+  pointer-events: none;   /* allow clicks through */
   overflow: hidden;
-  z-index: -1;
+  background: black;      /* black background */
 }
 
-/* Make the canvas fill the container like a background image */
-.antigravity canvas {
-  position: fixed !important;
-  inset: 0;
-  width: 100% !important;
-  height: 100% !important;
-  z-index: -1;       /* behind content */
-  pointer-events: none; /* allow UI clicks */
+.liquid-ether-container,
+.liquid-bg canvas {
+  width: 100%;
+  height: 100%;
 }
 
-
-/* Ensure all main content is above the background */
+/* =======================================
+   MAIN CONTENT LAYERS
+======================================= */
 .Nav,
 .Main,
-.About {
+.About,
+.Competitive,
+.ProjectCard,
+.Education,
+.Contact,
+.Footer {
   position: relative;
-  z-index: 10; /* higher than -1 */
+  z-index: 10; /* above Liquid Ether */
 }
 
-
+/* Navbar style */
 .Nav {
+  padding: 20px;
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
   position: relative;
   z-index: 10;
-  padding: 20px;
-  color: white;
-  font-size: 20px;
-  background: rgba(0, 0, 0, 0.2);
 }
 
+/* Main section style */
 .Main {
-  position: relative;
-  z-index: 5;
   margin-top: 80px;
   padding: 20px;
-  color: white;
   font-size: 18px;
   background: rgba(0, 0, 0, 0.3);
-  border:1px solid white;
+  border: 1px solid white;
+  z-index: 10;
 }
 
+/* =======================================
+   RESPONSIVE
+======================================= */
 @media only screen and (max-width:1169px){
+  .Nav {
+    font-size: 18px;
+  }
+  .Main {
+    font-size: 16px;
+  }
 }
+
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);

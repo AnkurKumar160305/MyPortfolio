@@ -31,9 +31,11 @@ const Footer = () => {
         {/* Top Section */}
         <div style={styles.topSection}>
           <div style={styles.brandBox}>
-            <h2 style={styles.logo}>ANKUR<span style={styles.dot}>.</span></h2>
+            <h2 style={styles.logo}>
+              ANKUR<span style={styles.dot}>.</span>
+            </h2>
             <p style={styles.tagline}>
-              Building digital experiences that merge art with functionality. 
+              Building digital experiences that merge art with functionality.
               Available for freelance and full-time opportunities.
             </p>
           </div>
@@ -41,8 +43,15 @@ const Footer = () => {
           <div style={styles.newsletter}>
             <h4 style={styles.footerHeading}>STAY IN THE LOOP</h4>
             <div style={styles.inputGroup}>
-              <input type="email" placeholder="Email Address" style={styles.input} className="footer-input" />
-              <button style={styles.subscribeBtn} className="footer-btn">SUBSCRIBE</button>
+              <input
+                type="email"
+                placeholder="Email Address"
+                style={styles.input}
+                className="footer-input"
+              />
+              <button style={styles.subscribeBtn} className="footer-btn">
+                SUBSCRIBE
+              </button>
             </div>
           </div>
         </div>
@@ -54,34 +63,64 @@ const Footer = () => {
           <div style={styles.linkColumn}>
             <h4 style={styles.footerHeading}>NAVIGATION</h4>
             <ul style={styles.list}>
-              <li style={styles.listItem}><a href="#home" className="footer-link">Home</a></li>
-              <li style={styles.listItem}><a href="#work" className="footer-link">Projects</a></li>
-              <li style={styles.listItem}><a href="#contact" className="footer-link">Contact</a></li>
+              <li style={styles.listItem}>
+                <a href="#home" className="footer-link">
+                  Home
+                </a>
+              </li>
+              <li style={styles.listItem}>
+                <a href="#projects" className="footer-link">
+                  Projects
+                </a>
+              </li>
+              <li style={styles.listItem}>
+                <a href="#contact" className="footer-link">
+                  Contact
+                </a>
+              </li>
             </ul>
           </div>
 
           <div style={styles.linkColumn}>
             <h4 style={styles.footerHeading}>SOCIAL</h4>
             <ul style={styles.list}>
-              <li style={styles.listItem}><a href="#" className="footer-link">GitHub</a></li>
-              <li style={styles.listItem}><a href="#" className="footer-link">LinkedIn</a></li>
+              <li style={styles.listItem}>
+                <a href="https://github.com/AnkurKumar160305" className="footer-link" target="_blank">
+                  GitHub
+                </a>
+              </li>
+              <li style={styles.listItem}>
+                <a href="https://www.linkedin.com/in/ankur-kumar-833026284/" target="_blank" className="footer-link">
+                  LinkedIn
+                </a>
+              </li>
             </ul>
           </div>
 
           <div style={styles.linkColumn}>
             <h4 style={styles.footerHeading}>LOCAL TIME</h4>
-            <p style={styles.timeText}>India (IST) • {new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</p>
-            <p style={styles.status}><span style={styles.onlineDot}></span> Open to Work</p>
+            <p style={styles.timeText}>
+              India (IST) •{" "}
+              {new Date().toLocaleTimeString([], {
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+            </p>
+            <p style={styles.status}>
+              <span style={styles.onlineDot}></span> Open to Work
+            </p>
           </div>
         </div>
 
         {/* Bottom Section */}
         <div style={styles.bottomSection}>
-          <p style={styles.copyright}>© {currentYear} ANKUR. ALL RIGHTS RESERVED.</p>
-          <div 
-            className="scroll-up" 
-            style={styles.scrollUp} 
-            onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}
+          <p style={styles.copyright}>
+            © {currentYear} ANKUR. ALL RIGHTS RESERVED.
+          </p>
+          <div
+            className="scroll-up"
+            style={styles.scrollUp}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             BACK TO TOP ↑
           </div>
@@ -94,7 +133,7 @@ const Footer = () => {
 const styles = {
   footer: {
     width: "100%",
-    background: "rgba(255, 255, 255, 0.02)", 
+    background: "rgba(255, 255, 255, 0.02)",
     backdropFilter: "blur(15px)",
     WebkitBackdropFilter: "blur(15px)",
     borderTop: "1px solid rgba(255, 255, 255, 0.1)",
@@ -103,25 +142,94 @@ const styles = {
     marginTop: "50px",
   },
   container: { maxWidth: "1100px", margin: "0 auto", padding: "0 20px" },
-  topSection: { display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "40px", marginBottom: "60px" },
+  topSection: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    flexWrap: "wrap",
+    gap: "40px",
+    marginBottom: "60px",
+  },
   brandBox: { maxWidth: "400px" },
-  logo: { fontSize: "2.5rem", fontWeight: "800", letterSpacing: "4px", margin: "0 0 15px 0" },
+  logo: {
+    fontSize: "2.5rem",
+    fontWeight: "800",
+    letterSpacing: "4px",
+    margin: "0 0 15px 0",
+  },
   dot: { color: "#fff" },
-  tagline: { fontSize: "1.1rem", color: "rgba(255,255,255,0.6)", lineHeight: "1.6" },
+  tagline: {
+    fontSize: "1.1rem",
+    color: "rgba(255,255,255,0.6)",
+    lineHeight: "1.6",
+  },
   newsletter: { width: "100%", maxWidth: "400px" },
-  footerHeading: { fontSize: "0.8rem", letterSpacing: "3px", color: "rgba(255,255,255,0.4)", marginBottom: "20px", fontWeight: "700" },
+  footerHeading: {
+    fontSize: "0.8rem",
+    letterSpacing: "3px",
+    color: "rgba(255,255,255,0.4)",
+    marginBottom: "20px",
+    fontWeight: "700",
+  },
   inputGroup: { display: "flex", gap: "10px" },
-  input: { flex: 1, background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", padding: "12px 20px", borderRadius: "5px", color: "white" },
-  subscribeBtn: { background: "white", color: "black", border: "none", padding: "0 25px", borderRadius: "5px", fontWeight: "700", cursor: "pointer" },
-  divider: { height: "1px", background: "rgba(255,255,255,0.1)", marginBottom: "60px" },
-  middleSection: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "40px", marginBottom: "80px" },
+  input: {
+    flex: 1,
+    background: "rgba(255,255,255,0.05)",
+    border: "1px solid rgba(255,255,255,0.1)",
+    padding: "12px 20px",
+    borderRadius: "5px",
+    color: "white",
+  },
+  subscribeBtn: {
+    background: "white",
+    color: "black",
+    border: "none",
+    padding: "0 25px",
+    borderRadius: "5px",
+    fontWeight: "700",
+    cursor: "pointer",
+  },
+  divider: {
+    height: "1px",
+    background: "rgba(255,255,255,0.1)",
+    marginBottom: "60px",
+  },
+  middleSection: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+    gap: "40px",
+    marginBottom: "80px",
+  },
   list: { listStyle: "none", padding: 0, margin: 0 },
   listItem: { marginBottom: "12px" },
   timeText: { fontSize: "1.1rem", margin: "0 0 10px 0" },
-  status: { color: "rgba(255,255,255,0.6)", display: "flex", alignItems: "center", gap: "8px" },
-  onlineDot: { width: "8px", height: "8px", background: "#4ade80", borderRadius: "50%", boxShadow: "0 0 10px #4ade80" },
-  bottomSection: { display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", fontSize: "0.8rem", color: "rgba(255,255,255,0.3)" },
-  scrollUp: { cursor: "pointer", color: "rgba(255,255,255,0.6)", fontWeight: "700", letterSpacing: "1px" }
+  status: {
+    color: "rgba(255,255,255,0.6)",
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+  },
+  onlineDot: {
+    width: "8px",
+    height: "8px",
+    background: "#4ade80",
+    borderRadius: "50%",
+    boxShadow: "0 0 10px #4ade80",
+  },
+  bottomSection: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexWrap: "wrap",
+    fontSize: "0.8rem",
+    color: "rgba(255,255,255,0.3)",
+  },
+  scrollUp: {
+    cursor: "pointer",
+    color: "rgba(255,255,255,0.6)",
+    fontWeight: "700",
+    letterSpacing: "1px",
+  },
 };
 
 export default Footer;

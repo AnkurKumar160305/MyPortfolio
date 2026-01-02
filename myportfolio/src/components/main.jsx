@@ -3,7 +3,7 @@ import './Main.css'
 
 const main = () => {
   return (
-    <div className='main'>
+    <div className='main' id="home">
       {/* LEFT CONTENT */}
       <div className="left-main">
         <h1 className='main-heading'>Hello, I'm Ankur</h1>
@@ -16,7 +16,7 @@ const main = () => {
             <a href="#resume" className='main-btn'>
                 <button className='resume'>Resume</button>
             </a>
-            <a href="#contact-me" className='contact-me'>
+            <a href="#contact" className='contact-me'>
                 <button className='contact-me-btn'>Contact Me</button>
             </a>
         </div>
